@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript Practice</title>
+</head>
+<body>
+    <h1>MY JAVASCRIPT TUTORIAL</h1>
+    <p>Hi. I'm glad and super excited to be here. These are my programming baby steps. All the codes and practices here are a compiled from resources obtained from different learning platforms.</p>
+    <div id="main-div">
+        <h1>My first Javascript</h1>
+        <button type="button" onclick="document.getElementById('demo').innerHTML = Date()">Click on me to display date and time</button>
+        <p id="demo"></p>
+        <p> From the code attached to the button, I instructed to the p tag with id="demo" to dispaly date and time when the button is clicked (onclick) 
+        -------------------------------source: w3schools
+        </p>
+        <hr>
+        <p  id="html-content">
+            Javascript can be used to change the content of the HTML. This is shown using the "click me " button (This text changes to New Content)
+        </p>
+        <button type="button" onclick="document.getElementById('html-content').innerHTML = 'New Content'">Click Me</button>
+        <button type="button" onclick="document.getElementById('html-content').style.fontSize='35px'">Increase Font size</button>
+        <button type="button" onclick="document.getElementById('html-content').style.fontSize='10px'">Reduce font size</button>
+        <hr>
+        <p id="show-hide">
+            Javascript can also be used to show and hide html elements.
+        </p>
+        <button type="button" onclick="document.getElementById('show-hide').style.display='none'">Hide Text</button>
+        <button type="button" onclick="document.getElementById('show-hide').style.display = 'block'">Show Text</button>
+        <hr>
+        <p>We can a function to add and manipulate event handlers. This done by writing the function code block and calling it in the HTML tag we it to work on. Example, we want to change the background color pf the page using a function </p>
+        <p id="alt-btn"></p>
+        <button type="button" onclick="changeColor ()">bkgrnd color change with function</button>
+        <button type="button" onclick="changeToYellow()">Change this div to yellow using a function</button>
+       
+        <p id="car">
+
+        </p>
+        <hr>
+        <h2>Accessing variables</h2>
+        <p>
+            The 3 ways of accessing variables are; 1. Dot accesor 2. Square brackets and 3. destructuring.
+            <br>
+            check out <a href="https://dmitripavlutin.com/access-object-properties-javascript/">this</a> for more details.
+        </p>
+
+        
+        
+
+        
+    </div>
+    <script src="script.js"></script>
+
+    <script>
+        // This changes the background color to green when the buttton is clicked
+        function changeColor (){
+            document.getElementById("main-div").style.backgroundColor ='green';
+        }
+        function changeToYellow (){
+            document.getElementById('main-div').style.backgroundColor='yellow';
+        }
+    
+
+    </script>
+</body>
