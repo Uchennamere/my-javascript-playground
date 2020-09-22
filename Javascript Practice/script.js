@@ -146,7 +146,7 @@ console.log(d);
 console.log(e);
 
 // JAVASCRIPT ARRAYS.
-let ar = [ "aba", "enugu", "owerri", "calabar" ];
+let ar = [ "aba", "enugu", "owerri", "calabar", "Ibadan" ];
 let arrr = [1,2,3,4,5,6];
 let arr = [23, "earth", {name: "archer", age: 24, sex: "male"}, function(a,b){
   return a-b ;
@@ -156,12 +156,196 @@ console.log(arr);
 console.log(arrr);
 console.log(arrr);
 
-console.log(arr[0]);//accessing an aarray.
+//accessing an aarray.
+console.log(arr[0]);
+console.log(arr[1]);
+
+//length of an array.
+console.log(ar.length);
+console.log(arrr.length);
+console.log(arr.length);
+
+//adding to an array.
+arrr[6] = 7; //add 7 to the array
+arrr[8] = 10;
+arrr[arrr.length] = "new array"; // adds "new array" to the end of the array.
+console.log(arrr);
+console.log(arrr.length);
+
+// reducing the length of an array.
+arrr.length = 4 ;
+console.log(arrr);
+ar.length = 3 ;
+console.log(ar);
+
+
 
 //CHANGING AN ELEMENT IN AN ARRAY.
 let changeArray = ar[0]= "abuja"; //changes the 0 index array (aba) to abuja;
-console.log(changeArray);
+console.log(ar);
 
+// ---------------- ARRAY METHODS.---------------
+//1. SORT.
+let fruits = [ 'banana', 'orange', 'pear', 'mango', 'apple'];
+let numerals = [7,3,8,9,6,4,1,5,2];
+// console.log(fruits.sort());
+console.log(numerals.sort());
+
+//2. ACCESSING THE FIRST ARRAY.
+console.log(fruits[0]);
+console.log(numerals[0]);
+
+//3. ACCESSING THE LAST ARRAY.
+console.log(fruits[fruits.length-1]);
+console.log(numerals[numerals.length-1]);
+
+//4. ADDING ELEMENTS TO AN ARRAY.
+//--- This can be done using the LENGTH method.
+fruits[fruits.length] = 'strawberry';
+
+// or PUSH method--- Adds a new element to the end of the array.
+fruits.push('lime');
+console.log(fruits);
+
+//or ARRAY INDEX method.
+//fruits[9] = 'watermelon';
+//console.log(fruits);
+
+//5----Array.isArray() is used to know if a variable is an array.
+console.log(Array.isArray(fruits));
+
+//6----CONVERTING AN ARRAY TO STRINGS using toString method.
+let arrayTostring = fruits.toString();
+console.log(arrayTostring);
+
+//7----JOIN METHOD: this is also used to convert arrays to string.
+console.log(fruits.join());
+// Using the JOIN method, you can secify the seperator. eg
+console.log(fruits.join('--'));
+
+//8---POP METHOD: this removes and returns the last element in an array.
+console.log(fruits.pop()); //lime is "popped out".
+
+// 9.--SHIFT METHOD: works like POP but the difference is that it works on the first element.
+console.log(fruits.shift());
+
+//10-- UNSHIFT -- same as ush. but it adds elements to the beginning.
+fruits.unshift('udara');
+console.log(fruits);
+
+//11--DELETE-- USED TO DELETE ELEMENTS. eg
+delete fruits[2];
+console.log(fruits);
+
+//12-- SPLICE METHOD.-- Adds new items to an array.
+// SYNTAX: arr.splice( position of the new items to be added, how many items to be removed, ... the new items to be added ...)
+fruits.splice(2, 0, 'paw-paw', 'pineapple');
+console.log(fruits);
+let snack = ['bread', 'buns', 'meatpie', 'pizza'];
+snack.splice( 2, 0, 'egg','jam', 'ham', 'fish');
+snack.splice(4,1,'onions');
+snack.splice(0,1,'burger');
+console.log(snack);
+
+//SPLICE method can also be used to remove items from an array. Eg.
+var fruitss = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruitss);
+fruitss.splice(1,1); // this code starts from the first position/index and removes one item(orange).
+console.log(fruitss);
+
+//13.----CONCAT method concatenates or merges existing arrays. Eg;
+let males = ['Jude', 'Max', 'Daniel'];
+let females = ['Sarah', 'Miya', 'Audrey'];
+let myFriends = males.concat(females);
+console.log(myFriends);
+
+//---CONCAT method can also be used to join more than two arrays together. eg;
+let englishCities = ['Birmingham', 'London', 'Manchester'];
+let frenchCities = ['lyon', 'Toulon','Paris']
+let spanishCities = ['Barcelona', 'Madrid'];
+let nigerianCities = ['lagos', 'abuja', 'owerri', 'ibadan'];
+let eurocities = englishCities.concat(frenchCities,spanishCities);
+let allCities = nigerianCities.concat(frenchCities,englishCities,spanishCities);
+console.log(eurocities);
+console.log(allCities);
+
+//CONCAT method also takes string values that is, it can merge an arrays and strings too.
+
+//14----SLICE METHOD -- This method slices/cuts off a part of the array starting from the index position that is given to the end.
+// the SLICE method does not remove a elements from the array. It rather CREATES a new array.
+let building = ['bungalow','duplex','mud','skyscraper'];
+console.log(building.slice(1));
+console.log(building);
+
+// THE SLICE method can also take two arguments (START AND END ARGUMENTS). It selects elements from the START argument and up to (but not including) the END argument. EG
+console.log(building.slice(1,3)); // we have a new array here ie ['duplex' ,'mud'];
+
+//15----toString method--- this converts arrays to strings. eg
+console.log(building.toString());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// fruits[fruits.length]= 'grape';
+// fruits[fruits.length]= 'lemon';
+// fruits.push('biscuits');
+// fruits[3]= "butter";
+// console.log(fruits);
+
+// let emptyArray = [];
+// emptyArray[0]= 'home';
+// emptyArray.push("how are you");
+// console.log(emptyArray);
 
 
 
