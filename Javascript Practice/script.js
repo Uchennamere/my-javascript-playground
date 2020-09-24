@@ -283,12 +283,47 @@ console.log(building.slice(1,3)); // we have a new array here ie ['duplex' ,'mud
 //15----toString method--- this converts arrays to strings. eg
 console.log(building.toString());
 
+//16---SORT 
+console.log(snack);
+console.log(snack.sort());
 
+//---NUMERIC SORT: If we sort numbers using the sort method, it sees it as string and returns a differebt result from what we want. example
+//-- To solve this problem, we introduce COMPARE FUNCTIONS as shown in lines 294 and 295. These COMPARE FUNCTIONS give us an alternative sort order.
+let numbers = [1,3,5,8,2,9,10,30,28,20,21];
+console.log(numbers.sort());
+let sortedNumbers = numbers.sort(function(a,b){return a-b}); //ACCENDING ORDER.
+let srtDecending = numbers.sort(function(a,b){return b-a}); //DECENDING ORDER.
+console.log(sortedNumbers);
+console.log(srtDecending);
+console.log(Math.min(...numbers)); //the spread operator expands an array of numbers into a list of arguments to enable the min/max carry out the required operation.
 
+//17--REVERSE.
+console.log(snack.reverse());
 
+//-----------------ARRAY LOOP METHODS ---------------------------
+//18--- FOR EACH method -- used to iterate/loop through arrays and performs a particular operation once on each of all the values in the array. Here, we introduce a call back function and pass in 3 arguments; value(number),index (optianal) and array(optional)..VIA.
+let n = numbers.forEach(function(numbers,index,array){
+  console.log((numbers+4));
+})
+// console.log(n);
 
+//19-- MAP METHOD-- creates a new array, performs the operation/instruction on each element in the array.eg
+let m = numbers.map(function(numbers,index,array){
+  return(numbers+4);
+})
+console.log(m);
 
+//--20-- FILTER METHOD.--- Creates a new array with array elements that passes a test.eg
+let filteredNumbers = numbers.filter(function(numbers){
+  return numbers > 20;
+})
+console.log(filteredNumbers);
 
+//--21--REDUCE--
+let sum = numbers.reduce(function(total,amount){
+  return total + amount;
+})
+console.log(sum);
 
 
 
