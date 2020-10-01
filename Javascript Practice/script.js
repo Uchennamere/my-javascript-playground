@@ -319,11 +319,253 @@ let filteredNumbers = numbers.filter(function(numbers){
 })
 console.log(filteredNumbers);
 
-//--21--REDUCE--
+//--21--REDUCE-- The reduce method can be used in several situations. 
 let sum = numbers.reduce(function(total,amount){
   return total + amount;
 })
 console.log(sum);
+
+// --22--- EVERY -- checks if an array passes a test and returns either true or false. eg.
+let result = [10, 5, 20, 100].every(function(number){
+  return number < 150
+})
+console.log(result) 
+
+
+// --23-- IndexOf-- this method searches and returns the position/index of the first occurence of the element that is being searched. If it doesn't find this, it returns -1.
+//  --SYNTAX: array.indexOf(item, start)--- where; ITEM is the required item we are searching for.. START(Optional)-- the position we want to start counting from.
+// lastIndexOf has the same syntax with indexOf(), but returns the position of the last occurence of the searched element.
+let giveNumbers = [2,'two',4,8,9,11,'seven','eleven','thirteen'];
+console.log(giveNumbers.indexOf(2));
+console.log(giveNumbers.indexOf('two'));
+console.log(giveNumbers.indexOf(88));
+
+//---24--FIND The find() method searches through an array and gives you 1 item based on your provided test.
+let foundNumber = giveNumbers.find(function(giveNumbers){
+  return giveNumbers === 'eleven';
+});
+console.log(foundNumber);
+
+//----------------------------- javascript dates, setDate and getDate methods ------------
+console.log(new Date());
+console.log(new Date(1993,10,1,13,30,20,36));
+console.log(new Date('October 2, 1993'));
+console.log(new Date('02/12/2012'));
+
+
+//-------------------JAVASCRIPT MATH OBJECT--------------------------
+console.log(Math.PI);
+console.log(Math.round(38.048));
+console.log(Math.pow(54,5)); //54 to the power of 5;
+console.log(Math.sqrt(25));
+console.log(Math.abs(-54));
+console.log(Math.ceil(5.4)); // 5.4 ROUNDED UP to the nearest integer.
+console.log(Math.floor(5.4)) // 5.4 ROUNDED DOWN to the nearest integer.
+console.log(Math.random()); //returns a number between 0 and 1
+console.log(Math.floor(Math.random() * 10 )); // returns random numbers from 1 to 9;
+console.log(Math.floor(Math.random() * 11)); // returns random numbers from 1 to 10.
+console.log(Math.floor(Math.random() * 100 )) //returns random numbers from 1 to 99
+console.log(Math.floor(Math.random() * 101 )) //returns random numbers from 1 to 100.
+
+
+//---------We can generate a proper random function by using the function below;
+function getRandomInteger(min, max){
+  return Math.floor(Math.random() * (max - min) ) + min;
+}
+// There are a lot of js math constructors in js. The list of these can be found in https://www.w3schools.com/js/js_math.asp.
+
+
+// --------------COMPARISON OPEARATORS --------
+//          == ; === ; != ; !==; > ; < ; >= ; <= 
+
+
+// ---------------- LOGICAL OPERATORS ----------------
+//               && and ; || OR ; ! NOT
+
+// ---------------- CONDITIONALS -----------------------
+// CONDITIONALS are instructions given to javascript to perform a particular action if (a) certain conditions are met. These conditionals are; IF, ELSE, ELSE IF and SWITCH.
+// I will illustrate this here in the script.js file and the index.html file (ie console and webpage respectively).
+
+//------------ IF ----------------------------------
+let message = 'Uchenna';
+if (message == "Uchenna") {console.log('Hello dude!!')}; //runs the block of code if the specified condition is true.
+
+//------------ ELSE -------------------------------
+// This runs when the IF condition doesn't pass.
+let middleName = 'Agams';
+if (middleName == 'Agams'){
+  console.log('true');
+} else{
+  console.log('false');
+}
+
+//EG 2.
+let school = 'CODE';
+if (school=='CODE'){
+  console.log('yea');
+} else {
+  console.log('nay');
+}
+
+//-------------------- ELSE IF --------------------------
+// ELSE IF specifies a new condition if the initial condition(s) is false.
+let color = 'blue';
+if (color == 'green'){
+  console.log('Nice');
+} else if (color == 'yellow'){
+  console.log('cool');
+} else {
+  console.log('try again')
+}
+
+//eg 2
+let street = 'Mbari';
+if(street == 'Douglas'){
+  console.log('you are there');
+} else if(street == 'Wetheral'){
+  console.log('move further');
+} else {
+  console.log('welcome');
+}
+
+// eg 3
+let directions = 'up';
+if(directions== 'mile 3'){
+  console.log('valid');
+} else if (directions > 2){
+  console.log('number greater than 2');
+} else if (directions == 'up'){
+  console.log('come up');
+} else {
+  console.log('I am tired');
+}
+
+// eg 4 
+let boy = '';
+if(boy == 'Obinna'){
+  console.log('true');
+} else if (boy == 'Ada'){
+  console.log('false');
+} else {
+  console.log('not valid')
+}
+
+//-------------------- SWITCH ---------------------------------
+// This is a better way for writing our codes if there are many IF statements involved. It has 2 cases;
+//the first case involves a break statement and the second is without a break statement.
+//---------------------1. BREAK CASE --------------------------------------- 
+//------ Here, the code runs and checks if the condition is met, Then breaks continously till the desired condition is met.
+let four = 2 + 2;
+switch(four) {
+  case 6:
+    console.log('try again');
+    break;
+  case 5:
+     console.log('no');
+     break;
+  case 7:
+     console.log('too far');
+     break;
+  case 4:
+     console.log('correct');
+     break;
+  default:
+     console.log('idk');
+}
+
+//----------------2. WITHOUT BREAK ---------------------------------------------
+//--------Here, the code doesn't check 
+let sixteen = 10 + 6;
+switch(sixteen){
+  case 16:
+    console.log('good');
+    // break;
+    case 12:
+      console.log('no');
+      // break;
+      case 10:
+        console.log('too small');
+        // break;
+        default:
+          console.log("explain");
+}
+
+//NB: It is important to note that cases can share the same code block. Also, the default statement does not have to be the last statement.
+//--- Also, remember to the end a SWITCH statement with a BREAK if default is not the last case in that statement. Eg.
+
+let towns = 'Owerri';
+switch(towns){
+  case 'Owerri':
+    case 'Aba':
+      case 'Enugu':
+      console.log('Welcome to the towns');
+      break;
+      case 'Abuja':
+        console.log('This is not it');
+        break;
+        case 'Ibadan':
+          console.log('Move to Lagos');
+          break;
+          case 'Lagos':
+            console.log('board a flight to owerri');
+            break;
+            default:
+              console.log('check again');
+              break;
+              case 'Ilorin':
+              console.log('Move out');
+              break;
+}
+//------------------- USING THE SWITCH STATEMENT TO GET THE CURRENT DAY OF THE WEEK.----------
+let day;
+switch (new Date().getDay()) {
+  case 0:
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+     day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case 6:
+    day = "Saturday";
+}
+console.log(day);
+
+//------------------- TERNARY OPERATORS -----------------
+//---An alternative for else statement. SYNTAX: (CONDITION) ? IF TRUE : ELSE(ie IF FALSE). eg
+let votersAge = 30;
+let voteable = (votersAge >= 18) ? 'Eligible to vote' : 'Ineligible to vote';
+console.log(voteable);
+
+// visit: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator for further reading.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
